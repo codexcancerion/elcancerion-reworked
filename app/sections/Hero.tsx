@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { Facebook, Github, Linkedin } from "lucide-react";
 import Meteors from "@/components/magicui/meteors";
