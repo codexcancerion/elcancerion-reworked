@@ -15,8 +15,8 @@ export default function About() {
                     <div className="w-full px-20 flex flex-col items-center justify-center">
                         <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-6xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
                             About Me</span>
-                        <p className="text-md mx-40 pt-4 text-center">test</p>
-                        <p className="text-md mx-40 pt-4 text-center">test</p>
+                        <p className="text-md mx-40 pt-4 text-center">{d1}</p>
+                        <p className="text-md mx-40 pt-4 text-center">{d2}</p>
                     </div>
 
                     <div className="w-full px-20 mt-20 grid grid-cols-4 gap-5 items-start justify-center">
