@@ -49,7 +49,7 @@ export default function Navbar() {
 
           <DockIcon
             className="dark:bg-white/10 p-3 mx-10 font-bold"
-            onClick={() => scrollToSection("projects")} // Fix here
+            // onClick={() => scrollToSection("projects")} // Fix here
           >
             PROJECTS
           </DockIcon>
