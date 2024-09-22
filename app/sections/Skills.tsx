@@ -103,9 +103,9 @@ export default function Skills() {
                             <h3 className="text-xl font-bold my-5 mt-9">Web Development</h3>
                             <div className="grid grid-cols-2 gap-5 items-start justify-center mb-3">
                                 {
-                                    skills.map(skill => {
+                                    skills.map((skill, i) => {
                                         return (
-                                            <Card className="w-full">
+                                            <Card key={i} className="w-full">
                                                 <CardHeader>
                                                     <CardTitle>{skill.title}</CardTitle>
                                                     <CardDescription>{skill.description}</CardDescription>
