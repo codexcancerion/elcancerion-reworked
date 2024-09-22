@@ -4,6 +4,7 @@ import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
+import ContactMe from "./sections/ContactMe";
 import Intersection from "@/components/original/Intersection";
 
 export default function Home() {
@@ -17,6 +18,8 @@ export default function Home() {
       <Skills />
       <Intersection />
       <Projects />
+      <Intersection />
+      <ContactMe />
     </>
   );
 }

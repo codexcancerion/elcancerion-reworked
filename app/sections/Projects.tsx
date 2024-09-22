@@ -81,9 +81,10 @@ export default function Projects() {
                         {/* <h3 className="text-xl font-bold my-5 mt-9">Web Development</h3> */}
                         <div className="grid grid-cols-2 gap-5 items-start justify-center mb-3">
                             {
-                                featuredProjects.map(e => {
+                                featuredProjects.map((e, i) => {
                                     return (
                                         <MagicCard
+                                            key={i}
                                             className="cursor-pointer flex flex-col shadow-md hover:shadow-lg transition ease-in-out whitespace-nowrap w-full bg-slate-20"
                                             gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
                                         >
@@ -95,17 +96,17 @@ export default function Projects() {
                                                 <p className="text-wrap">{e.description}</p>
                                                 <div className="w-full flex flex-wrap gap-2 mt-3">
                                                     {
-                                                        e.primaryTags.map(t => {
+                                                        e.primaryTags.map((t, i) => {
                                                             return (
-                                                                <Badge className="w-fit">{t}</Badge>
+                                                                <Badge key={i} className="w-fit">{t}</Badge>
                                                             )
                                                         }
                                                         )
                                                     }
                                                     {
-                                                        e.secondaryTags.map(t => {
+                                                        e.secondaryTags.map((t, i) => {
                                                             return (
-                                                                <Badge className="w-fit" variant={"secondary"}>{t}</Badge>
+                                                                <Badge key={i} className="w-fit" variant={"secondary"}>{t}</Badge>
                                                             )
                                                         }
                                                         )
@@ -123,9 +124,10 @@ export default function Projects() {
                         {/* <h3 className="text-xl font-bold my-5 mt-9">Graphic Designs</h3> */}
                         <div className="grid grid-cols-3 gap-5 items-start justify-center mb-3 mt-8">
                             {
-                                projects.map(e => {
+                                projects.map((e, i) => {
                                     return (
                                         <MagicCard
+                                            key={i}
                                             className="cursor-pointer flex flex-col shadow-md hover:shadow-lg transition ease-in-out whitespace-nowrap w-full bg-slate-20"
                                             gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
                                         >
@@ -137,17 +139,17 @@ export default function Projects() {
                                                 <p className="text-wrap">{e.description}</p>
                                                 <div className="w-full flex flex-wrap gap-2 mt-3">
                                                     {
-                                                        e.primaryTags.map(t => {
+                                                        e.primaryTags.map((t, i) => {
                                                             return (
-                                                                <Badge className="w-fit">{t}</Badge>
+                                                                <Badge key={i} className="w-fit">{t}</Badge>
                                                             )
                                                         }
                                                         )
                                                     }
                                                     {
-                                                        e.secondaryTags.map(t => {
+                                                        e.secondaryTags.map((t, i) => {
                                                             return (
-                                                                <Badge className="w-fit" variant={"secondary"}>{t}</Badge>
+                                                                <Badge key={i} className="w-fit" variant={"secondary"}>{t}</Badge>
                                                             )
                                                         }
                                                         )

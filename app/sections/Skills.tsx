@@ -119,9 +119,9 @@ export default function Skills() {
                             <h3 className="text-xl font-bold my-5 mt-9">Graphic Designs</h3>
                             <div className="grid grid-cols-3 gap-5 items-start justify-center mb-3">
                                 {
-                                    skills.map(skill => {
+                                    skills.map((skill, i) => {
                                         return (
-                                            <Card className="w-full">
+                                            <Card key={i} className="w-full">
                                                 <CardHeader>
                                                     <CardTitle className="text-xl">{skill.title}</CardTitle>
                                                     <CardDescription>{skill.description}</CardDescription>
@@ -137,9 +137,9 @@ export default function Skills() {
                     <h3 className="text-xl font-bold my-5 ">Soft Skills</h3>
                     <div className="flex gap-5 items-start justify-center mb-3">
                         {
-                            softSkills.map(skill => {
+                            softSkills.map((skill, i) => {
                                 return (
-                                    <Card className="w-full">
+                                    <Card key={i} className="w-full">
                                         <CardHeader className="p-2 text-center">
                                             <CardTitle className="text-lg text-slate-700">{skill.title}</CardTitle>
                                         </CardHeader>
