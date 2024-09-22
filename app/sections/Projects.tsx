@@ -11,7 +11,8 @@ import {
 import { useTheme } from "next-themes";
 import { MagicCard } from "@/components/magicui/magic-card";
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/ui/badge";
+import { BorderBeam } from "@/components/magicui/border-beam";
 
 
 export default function Projects() {
@@ -85,9 +86,10 @@ export default function Projects() {
                                     return (
                                         <MagicCard
                                             key={i}
-                                            className="cursor-pointer flex flex-col shadow-md hover:shadow-lg transition ease-in-out whitespace-nowrap w-full bg-slate-20"
+                                            className="relative cursor-pointer flex flex-col shadow-md hover:shadow-lg transition ease-in-out whitespace-nowrap w-full bg-slate-20"
                                             gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
                                         >
+                                            <BorderBeam size={250} duration={12} delay={9} />
                                             <CardHeader>
                                                 <CardDescription>{e.duration}</CardDescription>
                                                 <CardTitle>{e.title}</CardTitle>
