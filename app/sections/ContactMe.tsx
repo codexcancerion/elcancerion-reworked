@@ -8,35 +8,86 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
+import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
 import { MagicCard } from "@/components/magicui/magic-card";
 import { Badge } from "@/components/ui/badge";
 import ShinyButton from "@/components/magicui/shiny-button";
+import SecretMessage from "./SecretMessage";
+import ReviewCard from "@/components/original/ReviewCard";
+import { AnimatedList } from "@/components/magicui/animated-list";
 
+import Marquee from "@/components/magicui/marquee";
+
+const reviews = [
+    {
+        name: "Jack",
+        username: "@jack",
+        body: "I've never seen anything like this before. It's amazing. I love it.",
+        img: "https://avatar.vercel.sh/jack",
+        display: true
+    },
+    {
+        name: "Jill",
+        username: "@jill",
+        body: "I don't know what to say. I'm speechless. This is amazing.",
+        img: "https://avatar.vercel.sh/jill",
+        display: false
+    },
+    {
+        name: "John",
+        username: "@john",
+        body: "I'm at a loss for words. This is amazing. I love it.",
+        img: "https://avatar.vercel.sh/john",
+        display: true
+    },
+    {
+        name: "Jane",
+        username: "@jane",
+        body: "I'm at a loss for words. This is amazing. I love it.",
+        img: "https://avatar.vercel.sh/jane",
+        display: true
+    },
+    {
+        name: "Jenny",
+        username: "@jenny",
+        body: "I'm at a loss for words. This is amazing. I love it.",
+        img: "https://avatar.vercel.sh/jenny",
+        display: false
+    },
+    {
+        name: "James",
+        username: "@james",
+        body: "I'm at a loss for words. This is amazing. I love it.",
+        img: "https://avatar.vercel.sh/james",
+        display: true
+    },
+];
 
 export default function ContactMe() {
     const { theme } = useTheme();
 
-    const [contacts, setContacts] = useState([
-        {
-            contact: "melbertmarafo2022@gmail.com",
-            type: "Email",
-            primary: true,
-            primaryTags: ["Personal"],
-        },
-        {
-            contact: "+63-935-135-5782",
-            type: "Phone",
-            primary: true,
-            primaryTags: ["Personal"],
-        },
-        {
-            contact: "2023-01-0162@kcp.edu.ph",
-            type: "Email",
-            primary: false,
-            primaryTags: ["KCP Institutional Email"],
-        },
+    const [contacts, setContacts] = useState([{
+        contact: "melbertmarafo2022@gmail.com",
+        type: "Email",
+        primary: true,
+        primaryTags: ["Personal"],
+    },
+    {
+        contact: "+63-935-135-5782",
+        type: "Phone",
+        primary: true,
+        primaryTags: ["Personal"],
+    },
+    {
+        contact: "2023-01-0162@kcp.edu.ph",
+        type: "Email",
+        primary: false,
+        primaryTags: ["KCP Institutional Email"],
+    },
     ])
+
+    const review = [];
 
     const d1 = `And the day shall come that I shall receive your message`;
 
@@ -66,15 +117,15 @@ export default function ContactMe() {
                                             </CardHeader>
                                             <CardContent>
                                                 <div className="w-full flex flex-wrap gap-2">
-                                                    { e.primary && (
+                                                    {e.primary && (
                                                         <Badge className="w-fit">Primary</Badge>
-                                                    ) }
+                                                    )}
                                                     {
-                                                        e.primaryTags.map( (t, i) => {
-                                                                return (
-                                                                    <Badge key={i} className="w-fit" variant={"secondary"}>{t}</Badge>
-                                                                )
-                                                            }
+                                                        e.primaryTags.map((t, i) => {
+                                                            return (
+                                                                <Badge key={i} className="w-fit" variant={"secondary"}>{t}</Badge>
+                                                            )
+                                                        }
                                                         )
                                                     }
                                                 </div>
@@ -86,6 +137,36 @@ export default function ContactMe() {
                                     );
                                 })
                             }
+                        </div>
+                    </div>
+
+                    <div className="w-full px-5 my-10">
+                        <div className="w-full px-20 flex flex-col items-center justify-center">
+                            <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-3xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
+                                What do you think?</span>
+                            <p className="text-md mb-10 pt-4 text-center">Share me a secret message!</p>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-4">
+                            <SecretMessage />
+
+                            <div
+                                className={cn(
+                                    "relative flex max-h-[500px] w-full flex-col p-6 items-center overflow-hidden rounded-lg bg-transparent",
+                                )}
+                            >
+
+                                {reviews.length !== 0 ? (
+                                    <AnimatedList>
+                                        {reviews.map((item, idx) => (
+                                            item.display && <ReviewCard {...item} key={idx} />
+                                        ))
+                                        }
+                                    </AnimatedList>
+                                ) :
+                                    (<p>Currently, there's no comment here yet. Send me one!</p>)
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
