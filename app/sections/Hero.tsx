@@ -3,6 +3,7 @@ import React from "react";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { Facebook, Github, Linkedin } from "lucide-react";
 import Meteors from "@/components/magicui/meteors";
+import WordRotate from "@/components/magicui/word-rotate";
 
 
 export default function Hero() {
@@ -17,8 +18,11 @@ export default function Hero() {
                     <Meteors number={30} />
                 </div>                
 
-                <h1 className="text-8xl font-bold">Wazzup!</h1>
-                <p className="text-lg pt-5">We are trying to build something cool here</p>
+                <WordRotate
+                    className="text-6xl font-bold text-slate-800 dark:text-white"
+                    words={["Wazzup!", "I'm Melbert", "I hope you enjoy exploring"]}
+                />
+                <p className="text-lg pt-5">I am trying to build something cool here</p>
 
                 {/* SOCIAL MEDIA DOCK */}
                 <div className="relative">

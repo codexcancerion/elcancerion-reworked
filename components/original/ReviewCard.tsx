@@ -1,15 +1,13 @@
 import { cn } from "@/lib/utils";
 
 export default function ReviewCard({
-    img,
-    name,
-    username,
-    body,
+    secretName,
+    secretEmail,
+    secretMessage,
 }: {
-    img: string;
-    name: string;
-    username: string;
-    body: string;
+    secretName: string;
+    secretEmail: string;
+    secretMessage: string;
 }) {
     return (
         <figure
@@ -22,15 +20,15 @@ export default function ReviewCard({
             )}
         >
             <div className="flex flex-row items-center gap-2">
-                <img className="rounded-full" width="32" height="32" alt="" src={img} />
+                
                 <div className="flex flex-col">
                     <figcaption className="text-sm font-medium dark:text-white">
-                        {name}
+                        {secretName}
                     </figcaption>
-                    <p className="text-xs font-medium dark:text-white/40">{username}</p>
+                    <p className="text-xs font-medium dark:text-white/40">{secretEmail}</p>
                 </div>
             </div>
-            <blockquote className="mt-2 text-sm">{body}</blockquote>
+            <blockquote className="mt-2 text-sm">{secretMessage}</blockquote>
         </figure>
     );
 };

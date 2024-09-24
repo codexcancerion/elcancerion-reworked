@@ -17,56 +17,47 @@ import SecretMessage from "./SecretMessage";
 import ReviewCard from "@/components/original/ReviewCard";
 import { AnimatedList } from "@/components/magicui/animated-list";
 
-import Marquee from "@/components/magicui/marquee";
-
 const reviews = [
     {
-        name: "Jack",
-        username: "@jack",
-        body: "I've never seen anything like this before. It's amazing. I love it.",
-        img: "https://avatar.vercel.sh/jack",
+        secretName: "Jack",
+        secretEmail: "@jack",
+        secretMessage: "I've never seen anything like this before. It's amazing. I love it.",
         display: true
     },
     {
-        name: "Jill",
-        username: "@jill",
-        body: "I don't know what to say. I'm speechless. This is amazing.",
-        img: "https://avatar.vercel.sh/jill",
-        display: false
-    },
-    {
-        name: "John",
-        username: "@john",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        img: "https://avatar.vercel.sh/john",
+        secretName: "Jill",
+        secretEmail: "@jill",
+        secretMessage: "I don't know what to say. I'm speechless. This is amazing.",
         display: true
     },
     {
-        name: "Jane",
-        username: "@jane",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        img: "https://avatar.vercel.sh/jane",
+        secretName: "John",
+        secretEmail: "@john",
+        secretMessage: "I'm at a loss for words. This is amazing. I love it.",
         display: true
     },
     {
-        name: "Jenny",
-        username: "@jenny",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        img: "https://avatar.vercel.sh/jenny",
-        display: false
+        secretName: "Jane",
+        secretEmail: "@jane",
+        secretMessage: "I'm at a loss for words. This is amazing. I love it.",
+        display: true
     },
     {
-        name: "James",
-        username: "@james",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        img: "https://avatar.vercel.sh/james",
+        secretName: "Jenny",
+        secretEmail: "@jenny",
+        secretMessage: "I'm at a loss for words. This is amazing. I love it.",
+        display: true
+    },
+    {
+        secretName: "James",
+        secretEmail: "@james",
+        secretMessage: "I'm at a loss for words. This is amazing. I love it.",
         display: true
     },
 ];
 
 export default function ContactMe() {
     const { theme } = useTheme();
-
     const [contacts, setContacts] = useState([{
         contact: "melbertmarafo2022@gmail.com",
         type: "Email",
@@ -93,7 +84,7 @@ export default function ContactMe() {
 
     return (
         <>
-            <div id="contactme" className="overflow-hidden flex flex-col items-center px-20 pt-10 min-h-screen font-[family-name:var(--font-geist-sans)]  supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 backdrop-blur-md">
+            <div id="contact" className="overflow-hidden flex flex-col items-center px-20 pt-10 min-h-screen font-[family-secretName:var(--font-geist-sans)]  supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 backdrop-blur-md">
                 <div className="relative z-1 flex min-h-[500px] p-10 w-full flex-col m-20 items-center overflow-hidden rounded-lg border md:shadow-xl supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 backdrop-blur-md">
                     <div className="w-full px-20 flex flex-col items-center justify-center">
                         <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-6xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
@@ -152,12 +143,12 @@ export default function ContactMe() {
 
                             <div
                                 className={cn(
-                                    "relative flex max-h-[500px] w-full flex-col p-6 items-center overflow-hidden rounded-lg bg-transparent",
+                                    "relative flex h-[500px] max-h-[500px] w-full flex-col p-6 items-center overflow-hidden rounded-lg bg-transparent",
                                 )}
                             >
 
                                 {reviews.length !== 0 ? (
-                                    <AnimatedList>
+                                    <AnimatedList delay={3000}>
                                         {reviews.map((item, idx) => (
                                             item.display && <ReviewCard {...item} key={idx} />
                                         ))

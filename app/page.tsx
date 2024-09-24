@@ -6,13 +6,15 @@ import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
 import ContactMe from "./sections/ContactMe";
 import Intersection from "@/components/original/Intersection";
+import Footer from "./sections/Footer";
+
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <Hero />
-      <Intersection />
+      {/* <Intersection /> */}
       <About />
       <Intersection />
       <Skills />
@@ -20,6 +22,7 @@ export default function Home() {
       <Projects />
       <Intersection />
       <ContactMe />
+      <Footer />
     </>
   );
 }
