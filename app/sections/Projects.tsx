@@ -13,6 +13,7 @@ import { MagicCard } from "@/components/magicui/magic-card";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { BorderBeam } from "@/components/magicui/border-beam";
+import { ExternalLink } from "lucide-react";
 
 
 export default function Projects() {
@@ -21,47 +22,45 @@ export default function Projects() {
     const [featuredProjects, setFeaturedProjects] = useState([
         {
             title: "AuthZebra",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur accumsan lacus in libero sagittis.",
-            duration: "September, 2024",
-            primaryTags: ["Next.js", "Tailwind"],
+            description: "AuthZebra is a prototype of an authentication method that aims to recover accounts through QR Codes.",
+            duration: "July, 2024",
+            primaryTags: ["Next.js", "Tailwind", "MongoDB"],
             secondaryTags: ["School Project"],
+            link: "https://authzebra.vercel.app/",
         },
         {
             title: "Woodcraftify",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur accumsan lacus in libero sagittis.",
+            description: "Woodcraftify is a prototype of a furniture e-commerce web application",
             duration: "September, 2024",
-            primaryTags: ["HTML", "CSS", "Javascript"],
+            primaryTags: ["HTML", "CSS", "jQuery"],
             secondaryTags: ["School Project"],
+            link: "https://codexcancerion.github.io/woodcraftify/",
         },
     ]);
     const [projects, setProjects] = useState([
         {
-            title: "Woodcraftify",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur accumsan lacus in libero sagittis.",
-            duration: "September, 2024",
-            primaryTags: ["HTML", "CSS", "Javascript"],
-            secondaryTags: ["School Project"],
-        },
-        {
-            title: "AuthZebra",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur accumsan lacus in libero sagittis.",
-            duration: "September, 2024",
-            primaryTags: ["Next.js", "Tailwind"],
-            secondaryTags: ["School Project"],
-        },
-        {
-            title: "Balay",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur accumsan lacus in libero sagittis.",
-            duration: "September, 2024",
-            primaryTags: ["Next.js", "Tailwind"],
-            secondaryTags: ["School Project"],
-        },
-        {
             title: "Origatune",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur accumsan lacus in libero sagittis.",
-            duration: "September, 2024",
+            description: "Origatune is a prototype of an e-commerce website which showcases music instruments for music enthusiasts. ",
+            duration: "May, 2024",
             primaryTags: ["Next.js", "Material UI"],
             secondaryTags: ["School Project"],
+            link: "",
+        },
+        {
+            title: "Bean Haven",
+            description: "Bean Haven is a prototype of an e-commerce website of a Coffee Shop. ",
+            duration: "May, 2024",
+            primaryTags: ["HTML", "CSS", "Javascript"],
+            secondaryTags: ["School Project"],
+            link: "https://codexcancerion.github.io/bean-haven/",
+        },
+        {
+            title: "Bunny Electronics",
+            description: "Bunny Electronics is a prototype of an e-commerce website which showcases computer accessories and electronics. ",
+            duration: "September, 2023",
+            primaryTags: ["HTML", "CSS", "Bootstrap"],
+            secondaryTags: ["Spec Project", "Unfinished"],
+            link: "https://codexcancerion.github.io/bunny-electronics/",
         },
     ])
 
@@ -116,7 +115,13 @@ export default function Projects() {
                                                     }
                                                 </div>
                                             </CardContent>
-                                            <CardFooter className="self-end"><Link href={"#"} className="decoration-solid">View this site</Link></CardFooter>
+                                            {                                                
+                                                e.link !== "" || e.link !== null || e.link !== undefined ? (
+                                                        <CardFooter className="self-end">
+                                                            <Link href={e.link} ><span className="decoration-solid text-slate-800 hover:text-blue-800 inline"><ExternalLink className="inline" /> View this site</span></Link>
+                                                        </CardFooter>
+                                                    ) : ""
+                                            }
 
                                         </MagicCard>
                                     );
@@ -160,7 +165,14 @@ export default function Projects() {
                                                     }
                                                 </div>
                                             </CardContent>
-                                            <CardFooter className="self-end"><Link href={"#"} className="decoration-solid">View this site</Link></CardFooter>
+                                            {                                                
+                                                e.link !== "" || e.link !== null || e.link !== undefined ? (
+                                                        <CardFooter className="self-end">
+                                                            <Link href={e.link} ><span className="decoration-solid text-slate-800 hover:text-blue-800 inline"><ExternalLink className="inline" /> View this site</span></Link>
+                                                        </CardFooter>
+                                                    ) : ""
+                                            }
+
                                         </MagicCard>
                                     );
                                 })

@@ -80,6 +80,22 @@ export default function ContactMe() {
 
     const review = [];
 
+
+    const [copySuccess, setCopySuccess] = useState("");
+
+    //   const handleCopy = (text) => {
+    //     navigator.clipboard.writeText(text).then(
+    //       () => {
+    //         setCopySuccess(`Copied: ${text}`);
+    //         setTimeout(() => setCopySuccess(""), 2000); // Reset message after 2 seconds
+    //       },
+    //       (err) => {
+    //         setCopySuccess("Failed to copy!");
+    //         console.error("Could not copy text: ", err);
+    //       }
+    //     );
+    //   };
+
     const d1 = `And the day shall come that I shall receive your message`;
 
     return (
@@ -123,7 +139,23 @@ export default function ContactMe() {
                                                 </div>
                                             </CardContent>
                                             <CardFooter className="flex self-end justify-end">
-                                                <ShinyButton className="">Copy</ShinyButton>
+                                                <ShinyButton
+                                                    className=""
+                                                    onClick={():void => {
+                                                        navigator.clipboard.writeText(e.contact).then(
+                                                            () => {
+                                                                setCopySuccess(`Copied: ${e.contact}`);
+                                                                alert(`Copied: ${e.contact}`);
+                                                                setTimeout(() => setCopySuccess(""), 2000); // Reset message after 2 seconds
+                                                            },
+                                                            (err) => {
+                                                                setCopySuccess("Failed to copy!");
+                                                                alert("Could not copy text!");
+                                                                console.error("Could not copy text: ", err);
+                                                            }
+                                                        )
+                                                    }}
+                                                >Copy</ShinyButton>
                                             </CardFooter>
                                         </MagicCard>
                                     );
