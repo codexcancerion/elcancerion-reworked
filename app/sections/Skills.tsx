@@ -56,25 +56,86 @@ export default function Skills() {
             description: "I do this, yes."
         },
     ])
+    const [webSkills, setWebSkills] = useState([
+        {
+            title: "Next.js",
+            description: "I do this, yes.",
+            primary: true,
+        },
+        {
+            title: "React.js",
+            description: "I do this, yes.",
+            primary: true,
+        },
+        {
+            title: "Tailwind",
+            description: "I do this, yes.",
+            primary: true,
+        },
+        {
+            title: "Magic UI",
+            description: "I do this, yes.",
+            primary: true,
+        },
+        {
+            title: "Shadcn",
+            description: "I do this, yes.",
+            primary: true,
+        },
+        {
+            title: "Bootstrap",
+            description: "I do this, yes.",
+            primary: false,
+        },
+        {
+            title: "HTML",
+            description: "I do this, yes.",
+            primary: false,
+        },
+        {
+            title: "CSS",
+            description: "I do this, yes.",
+            primary: false,
+        },
+        {
+            title: "jQuery",
+            description: "I do this, yes.",
+            primary: false,
+        },
+        {
+            title: "PHP",
+            description: "I do this, yes.",
+            primary: false,
+        },
+    ])
+    const [graphicSkills, setGraphicSkills] = useState([
+        {
+            title: "Figma",
+            description: "I do this, yes.",
+            primary: true,
+        },
+        {
+            title: "Illustrator",
+            description: "I do this, yes.",
+            primary: true,
+        },
+        {
+            title: "Photoshop",
+            description: "I do this, yes.",
+            primary: true,
+        },
+    ])
     const [softSkills, setSoftSkills] = useState([
         {
-            title: "Kasjay",
+            title: "Team Collaboration",
             description: "I do this, yes."
         },
         {
-            title: "Kastoy",
+            title: "Project Management",
             description: "I do this, yes."
         },
         {
-            title: "Basta",
-            description: "I do this, yes."
-        },
-        {
-            title: "Kasjay",
-            description: "I do this, yes."
-        },
-        {
-            title: "Kastoy",
+            title: "Time Flexibility",
             description: "I do this, yes."
         },
     ])
@@ -92,24 +153,42 @@ export default function Skills() {
                         <p className="text-md lg:mx-40 md:mx-40 mx-5 pt-4 text-center">{d1}</p>
                     </div>
 
-                    <div className="w-full lg:px-20 md:px-20 px-5 flex flex-wrap items-start justify-center">
-                        <div className="w-full">
+                    <div className="w-full lg:px-20 md:px-20 flex flex-wrap items-start justify-center">
+                        <div className="w-full flex justify-center">
                             <SkillsIconCloud />
                         </div>
 
                         <div className="w-full lg:px-5 md:px-5 lg:my-10 md:my-10 my-3">
                             <h3 className="text-xl font-bold my-5 mt-9">Web Development</h3>
-                            <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5 items-start justify-center mb-3">
+                            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 items-start justify-center mb-3">
                                 {
-                                    skills.map((skill, i) => {
-                                        return (
-                                            <Card key={i} className="w-full">
-                                                <CardHeader>
-                                                    <CardTitle>{skill.title}</CardTitle>
-                                                    <CardDescription>{skill.description}</CardDescription>
-                                                </CardHeader>
-                                            </Card>
-                                        );
+                                    webSkills.map((skill, i) => {
+                                        if (skill.primary) {
+                                            return (
+                                                <Card key={i} className="w-full">
+                                                    <CardHeader>
+                                                        <CardTitle>{skill.title}</CardTitle>
+                                                        <CardDescription>{skill.description}</CardDescription>
+                                                    </CardHeader>
+                                                </Card>
+                                            )
+                                        };
+                                    })
+                                }
+                            </div>
+                                
+                            <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-5 items-start justify-center mb-3">
+                                {
+                                    webSkills.map((skill, i) => {
+                                        if (!skill.primary) {
+                                            return (
+                                                <Card key={i} className="w-full">
+                                                    <CardHeader className="p-2">
+                                                        <CardTitle className="text-lg text-slate-700">{skill.title}</CardTitle>
+                                                    </CardHeader>
+                                                </Card>
+                                            )
+                                        };
                                     })
                                 }
                             </div>
@@ -117,7 +196,7 @@ export default function Skills() {
                             <h3 className="text-xl font-bold my-5 mt-9">Graphic Designs</h3>
                             <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1  gap-5 items-start justify-center mb-3">
                                 {
-                                    skills.map((skill, i) => {
+                                    graphicSkills.map((skill, i) => {
                                         return (
                                             <Card key={i} className="w-full">
                                                 <CardHeader>
@@ -130,21 +209,21 @@ export default function Skills() {
                                 }
                             </div>
                         </div>
-                    </div>
 
-                    <h3 className="text-xl font-bold my-5 ">Soft Skills</h3>
-                    <div className="flex flex-wrap gap-5 items-start justify-center mb-3">
-                        {
-                            softSkills.map((skill, i) => {
-                                return (
-                                    <Card key={i} className="w-full">
-                                        <CardHeader className="p-2 text-center">
-                                            <CardTitle className="text-lg text-slate-700">{skill.title}</CardTitle>
-                                        </CardHeader>
-                                    </Card>
-                                );
-                            })
-                        }
+                        <h3 className="text-xl font-bold my-5 ">Soft Skills</h3>
+                        <div className="flex lg:flex-nowrap flex-wrap gap-5 items-start justify-left mb-3">
+                            {
+                                softSkills.map((skill, i) => {
+                                    return (
+                                        <Card key={i} className="w-full">
+                                            <CardHeader className="p-2 text-center">
+                                                <CardTitle className="text-lg text-slate-700">{skill.title}</CardTitle>
+                                            </CardHeader>
+                                        </Card>
+                                    );
+                                })
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

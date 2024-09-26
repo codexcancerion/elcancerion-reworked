@@ -33,7 +33,7 @@ export default function About() {
                         <p className="text-md lg:mx-40 md:mx-40 mx-5 pt-4 text-center">{d2}</p>
                     </div>
 
-                    <div className="w-full px-20 mt-20 flex gap-5 flex-wrap items-start justify-center">
+                    <div className="w-full lg:px-20 md:px-20 mt-20 flex gap-5 flex-wrap items-start justify-center">
                         {
                             highlights.map((i, idx) => {
                                 return (<div className="text-center" key={idx}>

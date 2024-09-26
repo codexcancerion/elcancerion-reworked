@@ -84,16 +84,17 @@ export default function ContactMe() {
 
     return (
         <>
-            <div id="contact" className="overflow-hidden flex flex-col items-center px-20 pt-10 min-h-screen font-[family-secretName:var(--font-geist-sans)]  supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 backdrop-blur-md">
-                <div className="relative z-1 flex min-h-[500px] p-10 w-full flex-col m-20 items-center overflow-hidden rounded-lg border md:shadow-xl supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 backdrop-blur-md">
-                    <div className="w-full px-20 flex flex-col items-center justify-center">
+            <div id="contact" className="overflow-hidden flex flex-col items-center lg:px-20 md:px-20 px-2 pt-10 min-h-screen font-[family-name:var(--font-geist-sans)]  supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 backdrop-blur-md">
+
+                <div className="relative z-1 flex min-h-[500px] p-10 w-full flex-col m-20 items-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+                    <div className="w-full lg:px-20 md:px-20 px-4 lg:mt-0 md:mt-0 mt-5 flex flex-col items-center justify-center">
                         <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-6xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
                             Contact Me</span>
-                        <p className="text-md mx-40 pt-4 text-center">{d1}</p>
+                        <p className="text-md lg:mx-40 md:mx-40 mx-5 pt-4 text-center">{d1}</p>
                     </div>
 
-                    <div className="w-full px-5 my-10 ">
-                        <div className="grid grid-cols-3 gap-5 items-start justify-center mb-3 mt-8">
+                    <div className="w-full lg:px-5 md:px-5 my-10 ">
+                        <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-5 items-start justify-center mb-3 mt-8">
                             {
                                 contacts.map((e, i) => {
                                     return (
@@ -104,7 +105,7 @@ export default function ContactMe() {
                                         >
                                             <CardHeader>
                                                 <CardDescription>{e.type}</CardDescription>
-                                                <CardTitle className="text-lg">{e.contact}</CardTitle>
+                                                <CardTitle className="text-md lg:text-lg md:text-lg">{e.contact}</CardTitle>
                                             </CardHeader>
                                             <CardContent>
                                                 <div className="w-full flex flex-wrap gap-2">
@@ -131,14 +132,14 @@ export default function ContactMe() {
                         </div>
                     </div>
 
-                    <div className="w-full px-5 my-10">
-                        <div className="w-full px-20 flex flex-col items-center justify-center">
+                    <div className="w-full lg:px-5 md:px-5 my-10 ">
+                        <div className="w-full lg:px-20 md:px-20 flex flex-col items-center justify-center">
                             <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-3xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
-                                What do you think?</span>
+                                What's on your mind?</span>
                             <p className="text-md mb-10 pt-4 text-center">Share me a secret message!</p>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4">
                             <SecretMessage />
 
                             <div

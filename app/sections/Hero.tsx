@@ -19,7 +19,7 @@ export default function Hero() {
                 </div>                
 
                 <WordRotate
-                    className="text-6xl font-bold text-slate-800 dark:text-white"
+                    className="text-6xl font-bold text-slate-800 dark:text-white text-left"
                     words={["Wazzup!", "I'm Melbert", "I hope you enjoy exploring"]}
                 />
                 <p className="text-lg pt-5">I am trying to build something cool here</p>
