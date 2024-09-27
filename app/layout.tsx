@@ -26,12 +26,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
-      >
-        {children}
-      </body>
-    </html>
+    <>
+    <Analytics></Analytics>
+    <SpeedInsights></SpeedInsights>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
+        >
+          {children}
+        </body>
+      </html> 
+    </>
   );
 }
