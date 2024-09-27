@@ -27,12 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <>
-    <Analytics></Analytics>
-    <SpeedInsights></SpeedInsights>
       <html lang="en">
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
         >
+        <Analytics></Analytics>
+        <SpeedInsights></SpeedInsights>
           {children}
         </body>
       </html> 

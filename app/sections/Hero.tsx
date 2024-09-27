@@ -4,6 +4,7 @@ import { Dock, DockIcon } from "@/components/magicui/dock";
 import { Facebook, Github, Linkedin } from "lucide-react";
 import Meteors from "@/components/magicui/meteors";
 import WordRotate from "@/components/magicui/word-rotate";
+import Link from "next/link";
 
 
 export default function Hero() {
@@ -28,13 +29,13 @@ export default function Hero() {
                 <div className="relative">
                     <Dock magnification={60} distance={100}>
                         <DockIcon className="bg-black/10 dark:bg-white/10 p-3">
-                            <Facebook className="size-full" />
+                            <Link href="https://web.facebook.com/melbert.marafo"><Facebook className="size-full" /></Link>
                         </DockIcon>
                         <DockIcon className="bg-black/10 dark:bg-white/10 p-3">
-                            <Github className="size-full" />
+                            <Link href="https://github.com/codexcancerion"><Github className="size-full" /></Link>
                         </DockIcon>
                         <DockIcon className="bg-black/10 dark:bg-white/10 p-3">
-                            <Linkedin className="size-full" />
+                            <Link href="https://www.linkedin.com/in/melbert-marafo-15372828b/"><Linkedin className="size-full" /></Link>
                         </DockIcon>
                     </Dock>
                 </div>
